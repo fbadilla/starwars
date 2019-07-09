@@ -4,6 +4,9 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
+import { Peliculas } from "./views/Peliculas";
+import { Peoples } from "./views/Peoples";
+import { Vehicles } from "./views/Vehicles";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -13,10 +16,9 @@ import { Footer } from "./component/footer";
 //create your first component
 export class Layout extends React.Component {
 	render() {
-
-        //the basename is used when your project is published in a subdirectory and not in the root of the domain
-        // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-        const basename = process.env.BASENAME || '';
+		//the basename is used when your project is published in a subdirectory and not in the root of the domain
+		// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+		const basename = process.env.BASENAME || "";
 
 		return (
 			<div className="d-flex flex-column h-100">
@@ -26,6 +28,9 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route path="/demo" component={Demo} />
+							<Route path="/peliculas" component={Peliculas} />
+							<Route path="/Vehicles" component={Vehicles} />
+							<Route path="/peoples" component={Peoples} />
 							<Route path="/single/:theid" component={Single} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
